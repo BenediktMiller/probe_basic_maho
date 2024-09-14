@@ -353,7 +353,7 @@ bottom-margin: 0px;
            <enum>QTabWidget::South</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>10</number>
           </property>
           <widget class="QWidget" name="main_tab">
            <attribute name="title">
@@ -4732,11 +4732,11 @@ QHeaderView {
                      <property name="hiddenColumns" stdset="0">
                       <string>2</string>
                      </property>
-                     <property name="nameColumnsWidth" stdset="0">
-                      <number>310</number>
-                     </property>
                      <property name="fixedNameColumn" stdset="0">
                       <bool>true</bool>
+                     </property>
+                     <property name="nameColumnsWidth" stdset="0">
+                      <number>310</number>
                      </property>
                      <attribute name="horizontalHeaderCascadingSectionResizes">
                       <bool>true</bool>
@@ -5133,11 +5133,11 @@ QHeaderView {
                      <property name="hiddenColumns" stdset="0">
                       <string>2</string>
                      </property>
-                     <property name="nameColumnsWidth" stdset="0">
-                      <number>310</number>
-                     </property>
                      <property name="fixedNameColumn" stdset="0">
                       <bool>true</bool>
+                     </property>
+                     <property name="nameColumnsWidth" stdset="0">
+                      <number>310</number>
                      </property>
                      <attribute name="horizontalHeaderCascadingSectionResizes">
                       <bool>true</bool>
@@ -5577,6 +5577,26 @@ color: white;</string>
              </layout>
             </item>
            </layout>
+          </widget>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="title">
+            <string>Job Info</string>
+           </attribute>
+           <widget class="QWebView" name="webView">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>1631</width>
+              <height>611</height>
+             </rect>
+            </property>
+            <property name="url">
+             <url>
+              <string>http://127.0.0.1:8080/files/jobdata</string>
+             </url>
+            </property>
+           </widget>
           </widget>
           <widget class="QWidget" name="atc_tab">
            <attribute name="title">
@@ -8161,15 +8181,15 @@ QPushButton:checked {
                      <property name="sortingEnabled">
                       <bool>true</bool>
                      </property>
-                     <property name="displayColumns" stdset="0">
-                      <string>TZDR</string>
-                     </property>
                      <property name="currentToolColor" stdset="0">
                       <color>
                        <red>42</red>
                        <green>56</green>
                        <blue>255</blue>
                       </color>
+                     </property>
+                     <property name="displayColumns" stdset="0">
+                      <string>TZDR</string>
                      </property>
                      <attribute name="horizontalHeaderMinimumSectionSize">
                       <number>90</number>
@@ -20915,7 +20935,7 @@ QTabBar::tab:only-one {
                <enum>QTabWidget::Rounded</enum>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="facing_tab">
                <attribute name="title">
@@ -20989,7 +21009,7 @@ QTabBar::tab:only-one {
 }</string>
                   </property>
                   <property name="currentIndex">
-                   <number>7</number>
+                   <number>6</number>
                   </property>
                   <widget class="QWidget" name="spot_drill_tab">
                    <attribute name="title">
@@ -22788,6 +22808,331 @@ color: white;
               </widget>
              </item>
             </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>DRO</string>
+           </attribute>
+           <widget class="MDIButton" name="mdibutton">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>410</x>
+              <y>130</y>
+              <width>111</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Set</string>
+            </property>
+            <property name="MDICommand" stdset="0">
+             <string>G10 L20 P1 X[#&lt;set_dro_value&gt;-#&lt;drolabel&gt;]</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="set_dro_value">
+            <property name="geometry">
+             <rect>
+              <x>800</x>
+              <y>130</y>
+              <width>251</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bebas Kai</family>
+              <pointsize>-1</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 60px;</string>
+            </property>
+            <property name="text">
+             <string>0.000</string>
+            </property>
+           </widget>
+           <widget class="VCPLineEdit" name="lineedit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>130</y>
+              <width>271</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 60px;</string>
+            </property>
+            <property name="rules" stdset="0">
+             <string>[{&quot;name&quot;: &quot;Display Axis Value&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=x&quot;, &quot;trigger&quot;: true}]}]</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>130</y>
+              <width>91</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>40</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">front: 40px &quot;Bebas Kai&quot;;</string>
+            </property>
+            <property name="text">
+             <string>X</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="VCPLineEdit" name="lineedit_2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>430</y>
+              <width>271</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 60px;</string>
+            </property>
+            <property name="rules" stdset="0">
+             <string>[{&quot;name&quot;: &quot;Display Axis Value&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=z&quot;, &quot;trigger&quot;: true}]}]</string>
+            </property>
+           </widget>
+           <widget class="VCPLineEdit" name="lineedit_3">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>280</y>
+              <width>271</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 60px;</string>
+            </property>
+            <property name="rules" stdset="0">
+             <string>[{&quot;name&quot;: &quot;Display Axis Value&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=y&quot;, &quot;trigger&quot;: true}]}]</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_5">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>280</y>
+              <width>91</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>40</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">front: 40px &quot;Bebas Kai&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Y</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_6">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>430</y>
+              <width>91</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>40</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">front: 40px &quot;Bebas Kai&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Z</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="MDIButton" name="mdibutton_2">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>530</x>
+              <y>130</y>
+              <width>111</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="MDICommand" stdset="0">
+             <string>G10 L20 P1 X[#&lt;drolabel&gt;]</string>
+            </property>
+           </widget>
+           <widget class="MDIButton" name="mdibutton_3">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>410</x>
+              <y>280</y>
+              <width>111</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Set</string>
+            </property>
+            <property name="MDICommand" stdset="0">
+             <string>G10 L20 P1 Y[#&lt;set_dro_value&gt;-#&lt;drolabel_3&gt;]</string>
+            </property>
+           </widget>
+           <widget class="MDIButton" name="mdibutton_4">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>530</x>
+              <y>280</y>
+              <width>111</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="MDICommand" stdset="0">
+             <string>G10 L20 P1 Y[#&lt;drolabel&gt;]</string>
+            </property>
+           </widget>
+           <widget class="MDIButton" name="mdibutton_5">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>410</x>
+              <y>430</y>
+              <width>111</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Set</string>
+            </property>
+            <property name="MDICommand" stdset="0">
+             <string>G10 L20 P1 Z[#&lt;set_dro_value&gt;-#&lt;drolabel_5&gt;]</string>
+            </property>
+           </widget>
+           <widget class="MDIButton" name="mdibutton_6">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>530</x>
+              <y>430</y>
+              <width>111</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="MDICommand" stdset="0">
+             <string>G10 L20 P1 Z[#&lt;drolabel&gt;]</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_7">
+            <property name="geometry">
+             <rect>
+              <x>800</x>
+              <y>100</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">front: 40px &quot;Bebas Kai&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Set value</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="HalLedIndicator" name="halledindicator">
+            <property name="geometry">
+             <rect>
+              <x>1410</x>
+              <y>490</y>
+              <width>30</width>
+              <height>30</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="HalButton" name="halbutton">
+            <property name="geometry">
+             <rect>
+              <x>1410</x>
+              <y>540</y>
+              <width>80</width>
+              <height>23</height>
+             </rect>
+            </property>
            </widget>
           </widget>
          </widget>
@@ -33834,9 +34179,19 @@ font: 11pt bebas kai;
    <header>qtpyvcp.widgets.input_widgets.dro_line_edit</header>
   </customwidget>
   <customwidget>
+   <class>HalLedIndicator</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.hal_widgets.hal_led</header>
+  </customwidget>
+  <customwidget>
    <class>HalLabel</class>
    <extends>QLabel</extends>
    <header>qtpyvcp.widgets.hal_widgets.hal_label</header>
+  </customwidget>
+  <customwidget>
+   <class>HalButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.hal_widgets.hal_button</header>
   </customwidget>
   <customwidget>
    <class>HalBarIndicator</class>
@@ -33848,11 +34203,6 @@ font: 11pt bebas kai;
    <extends>QStackedWidget</extends>
    <header>qtpyvcp.widgets.containers.stack</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>DynATC</class>
-   <extends>QQuickWidget</extends>
-   <header>widgets.atc_widget.atc</header>
   </customwidget>
   <customwidget>
    <class>FacingWidget</class>
@@ -33870,9 +34220,19 @@ font: 11pt bebas kai;
    <header>qtpyvcp_conversational_gcode.widgets.xy_coord</header>
   </customwidget>
   <customwidget>
+   <class>DynATC</class>
+   <extends>QQuickWidget</extends>
+   <header>widgets.atc_widget.atc</header>
+  </customwidget>
+  <customwidget>
    <class>QQuickWidget</class>
    <extends>QWidget</extends>
    <header location="global">QtQuickWidgets/QQuickWidget</header>
+  </customwidget>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebKitWidgets/QWebView</header>
   </customwidget>
  </customwidgets>
  <resources>
@@ -33891,321 +34251,33 @@ font: 11pt bebas kai;
  </resources>
  <connections>
   <connection>
-   <sender>main_delete_item_button</sender>
+   <sender>tool_number_entry_main_panel</sender>
+   <signal>returnPressed()</signal>
+   <receiver>m6_tool_call_button_main_panel</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>480</x>
+     <y>752</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>594</x>
+     <y>758</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCopyToEditor</sender>
    <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>deleteItem()</slot>
+   <receiver>mdihistory</receiver>
+   <slot>copySelectionToGcodeEditor()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>790</x>
-     <y>611</y>
+     <x>79</x>
+     <y>95</y>
     </hint>
     <hint type="destinationlabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_folder_up_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>viewParentDirectory()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>718</x>
-     <y>107</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_new_folder_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>newFolder()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1027</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_new_folder_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>newFolder()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>373</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>copy_from_usb_2</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>doFileTransfer()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>565</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_delete_item_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>deleteItem()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>136</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_new_file_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>newFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>896</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>copy_to_usb_2</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>doFileTransfer()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>694</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_folder_up_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>viewParentDirectory()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>160</x>
-     <y>107</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>filesystemtable_2</sender>
-   <signal>transferFileRequest(QString)</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>transferFile(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_load_gcode_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>loadSelectedFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1119</x>
-     <y>107</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>filesystemtable</sender>
-   <signal>transferFileRequest(QString)</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>transferFile(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>filesystemtable</sender>
-   <signal>gcodeFileSelected(bool)</signal>
-   <receiver>main_load_gcode_button</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>776</x>
-     <y>182</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1119</x>
-     <y>107</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_new_file_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>newFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>242</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tool_table_delete_button</sender>
-   <signal>clicked()</signal>
-   <receiver>tableWidget_2</receiver>
-   <slot>deleteSelectedTool()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>139</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>58</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tool_table_save_button</sender>
-   <signal>clicked()</signal>
-   <receiver>tableWidget_2</receiver>
-   <slot>saveToolTable()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>139</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>58</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>y_view_button</sender>
-   <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>setViewY()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>877</x>
-     <y>186</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1135</x>
-     <y>271</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tool_table_reload_button</sender>
-   <signal>clicked()</signal>
-   <receiver>tableWidget_2</receiver>
-   <slot>loadToolTable()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>159</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>58</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>zoom_in_button</sender>
-   <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>zoomIn()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>877</x>
-     <y>315</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1135</x>
-     <y>271</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tool_table_add_tool_button</sender>
-   <signal>clicked()</signal>
-   <receiver>tableWidget_2</receiver>
-   <slot>addTool()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>139</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>58</x>
+     <x>303</x>
      <y>75</y>
     </hint>
    </hints>
@@ -34227,6 +34299,38 @@ font: 11pt bebas kai;
    </hints>
   </connection>
   <connection>
+   <sender>device_new_file_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>newFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tool_number_entry_atc_page</sender>
+   <signal>returnPressed()</signal>
+   <receiver>m6_tool_call_button_atc_page</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>205</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>iso_view_button</sender>
    <signal>clicked()</signal>
    <receiver>vtk</receiver>
@@ -34243,14 +34347,238 @@ font: 11pt bebas kai;
    </hints>
   </connection>
   <connection>
-   <sender>path_button</sender>
+   <sender>btnMdiRowUp_3</sender>
    <signal>clicked()</signal>
+   <receiver>mdihistory</receiver>
+   <slot>runSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>242</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>save_as_button</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodetextedit</receiver>
+   <slot>saveFileAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1601</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1195</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x_axis_button_13</sender>
+   <signal>clicked()</signal>
+   <receiver>offset_table</receiver>
+   <slot>saveOffsetTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>358</x>
+     <y>437</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnMdiRowUp_2</sender>
+   <signal>clicked()</signal>
+   <receiver>mdihistory</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removabledevicecombobox</sender>
+   <signal>usbPresent(bool)</signal>
+   <receiver>device_eject_usb_button</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tool_table_add_tool_button</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget_2</receiver>
+   <slot>addTool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>58</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removabledevicecombobox</sender>
+   <signal>currentPathChanged(QString)</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>setRootPath(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x_axis_button_11</sender>
+   <signal>clicked()</signal>
+   <receiver>offset_table</receiver>
+   <slot>clearOffsetTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_del_history_row</sender>
+   <signal>clicked()</signal>
+   <receiver>mdihistory</receiver>
+   <slot>removeSelectedItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>97</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tool_table_save_button</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget_2</receiver>
+   <slot>saveToolTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>58</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>main_new_file_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>newFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>896</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>776</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mdiEntry</sender>
+   <signal>returnPressed()</signal>
+   <receiver>enter</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>619</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>main_delete_item_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>deleteItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>776</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnMdiRowUp</sender>
+   <signal>clicked()</signal>
+   <receiver>mdihistory</receiver>
+   <slot>moveRowItemUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>374</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pan_button</sender>
+   <signal>clicked(bool)</signal>
    <receiver>vtk</receiver>
-   <slot>setViewPath()</slot>
+   <slot>enable_panning(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>877</x>
-     <y>487</y>
+     <y>272</y>
     </hint>
     <hint type="destinationlabel">
      <x>1135</x>
@@ -34259,34 +34587,146 @@ font: 11pt bebas kai;
    </hints>
   </connection>
   <connection>
-   <sender>z_view_button</sender>
+   <sender>save_button</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>setViewZ()</slot>
+   <receiver>gcodetextedit</receiver>
+   <slot>saveFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>877</x>
-     <y>229</y>
+     <x>1490</x>
+     <y>611</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1135</x>
-     <y>271</y>
+     <x>1195</x>
+     <y>135</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>clear_button</sender>
+   <sender>btn_run_line</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>clearLivePlot()</slot>
+   <receiver>mdihistory</receiver>
+   <slot>runSelection()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>877</x>
-     <y>530</y>
+     <x>79</x>
+     <y>95</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1135</x>
-     <y>271</y>
+     <x>200</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnMdiRowDown</sender>
+   <signal>clicked()</signal>
+   <receiver>mdihistory</receiver>
+   <slot>moveRowItemDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>369</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enter</sender>
+   <signal>clicked()</signal>
+   <receiver>mdihistory</receiver>
+   <slot>submit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>edit_gcode_button</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>gcodetextedit</receiver>
+   <slot>EditorReadWrite(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1268</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1195</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x_axis_button_10</sender>
+   <signal>clicked()</signal>
+   <receiver>offset_table</receiver>
+   <slot>deleteSelectedOffset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>copy_from_usb_2</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>doFileTransfer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>565</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x_axis_button_14</sender>
+   <signal>clicked()</signal>
+   <receiver>offset_table</receiver>
+   <slot>loadOffsetTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>508</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>device_folder_up_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>viewParentDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>182</y>
     </hint>
    </hints>
   </connection>
@@ -34307,6 +34747,198 @@ font: 11pt bebas kai;
    </hints>
   </connection>
   <connection>
+   <sender>filesystemtable</sender>
+   <signal>gcodeFileSelected(bool)</signal>
+   <receiver>main_load_gcode_button</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>776</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1119</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>load_spindle_tool_number_2</sender>
+   <signal>returnPressed()</signal>
+   <receiver>load_spindle_button_2</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>483</x>
+     <y>168</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>503</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_button</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>clearLivePlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>877</x>
+     <y>530</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1135</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>main_load_gcode_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>loadSelectedFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1119</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>776</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>device_eject_usb_button</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>removabledevicecombobox</receiver>
+   <slot>ejectDevice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>518</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>device_rename_item_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>rename()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>469</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>find_replace_button</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodetextedit</receiver>
+   <slot>findDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1312</x>
+     <y>603</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1320</x>
+     <y>541</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_button</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewPath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>877</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1135</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom_in_button</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>877</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1135</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removabledevicecombobox</sender>
+   <signal>currentDeviceEjectable(bool)</signal>
+   <receiver>device_eject_usb_button</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>main_folder_up_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>viewParentDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>718</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>776</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>load_spindle_tool_number</sender>
+   <signal>returnPressed()</signal>
+   <receiver>load_spindle_button</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>180</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>205</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>perspective_button</sender>
    <signal>clicked()</signal>
    <receiver>vtk</receiver>
@@ -34319,6 +34951,38 @@ font: 11pt bebas kai;
     <hint type="destinationlabel">
      <x>1135</x>
      <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>device_delete_item_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>deleteItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_clear_queue</sender>
+   <signal>clicked()</signal>
+   <receiver>mdihistory</receiver>
+   <slot>clearQueue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -34355,194 +35019,18 @@ font: 11pt bebas kai;
    </hints>
   </connection>
   <connection>
-   <sender>device_rename_item_button</sender>
+   <sender>tool_table_reload_button</sender>
    <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>rename()</slot>
+   <receiver>tableWidget_2</receiver>
+   <slot>loadToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>469</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>x_axis_button_10</sender>
-   <signal>clicked()</signal>
-   <receiver>offset_table</receiver>
-   <slot>deleteSelectedOffset()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
+     <x>159</x>
      <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>117</x>
-     <y>473</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>x_axis_button_11</sender>
-   <signal>clicked()</signal>
-   <receiver>offset_table</receiver>
-   <slot>clearOffsetTable()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>220</x>
-     <y>473</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>x_axis_button_13</sender>
-   <signal>clicked()</signal>
-   <receiver>offset_table</receiver>
-   <slot>saveOffsetTable()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>358</x>
-     <y>437</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>x_axis_button_14</sender>
-   <signal>clicked()</signal>
-   <receiver>offset_table</receiver>
-   <slot>loadOffsetTable()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>508</x>
-     <y>473</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>removabledevicecombobox</sender>
-   <signal>currentPathChanged(QString)</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>setRootPath(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>252</x>
-     <y>107</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>195</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>removabledevicecombobox</sender>
-   <signal>usbPresent(bool)</signal>
-   <receiver>device_eject_usb_button</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>252</x>
-     <y>107</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>518</x>
-     <y>107</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_eject_usb_button</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>removabledevicecombobox</receiver>
-   <slot>ejectDevice()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>518</x>
-     <y>107</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>252</x>
-     <y>107</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>load_spindle_tool_number</sender>
-   <signal>returnPressed()</signal>
-   <receiver>load_spindle_button</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>180</x>
-     <y>88</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>205</x>
-     <y>90</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>load_spindle_tool_number_2</sender>
-   <signal>returnPressed()</signal>
-   <receiver>load_spindle_button_2</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>483</x>
-     <y>168</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>503</x>
-     <y>170</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tool_number_entry_main_panel</sender>
-   <signal>returnPressed()</signal>
-   <receiver>m6_tool_call_button_main_panel</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>480</x>
-     <y>752</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>594</x>
-     <y>758</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tool_number_entry_atc_page</sender>
-   <signal>returnPressed()</signal>
-   <receiver>m6_tool_call_button_atc_page</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>208</x>
-     <y>88</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>205</x>
-     <y>90</y>
+     <x>58</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -34563,14 +35051,62 @@ font: 11pt bebas kai;
    </hints>
   </connection>
   <connection>
-   <sender>pan_button</sender>
-   <signal>clicked(bool)</signal>
+   <sender>tool_table_delete_button</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget_2</receiver>
+   <slot>deleteSelectedTool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>58</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>filesystemtable_2</sender>
+   <signal>transferFileRequest(QString)</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>transferFile(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>776</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>filesystemtable</sender>
+   <signal>transferFileRequest(QString)</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>transferFile(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>776</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>z_view_button</sender>
+   <signal>clicked()</signal>
    <receiver>vtk</receiver>
-   <slot>enable_panning(bool)</slot>
+   <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>877</x>
-     <y>272</y>
+     <y>229</y>
     </hint>
     <hint type="destinationlabel">
      <x>1135</x>
@@ -34579,98 +35115,50 @@ font: 11pt bebas kai;
    </hints>
   </connection>
   <connection>
-   <sender>filesystemtable_2</sender>
-   <signal>atDeviceRoot(bool)</signal>
-   <receiver>device_folder_up_button</receiver>
-   <slot>setDisabled(bool)</slot>
+   <sender>device_new_folder_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
+     <x>373</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
      <x>195</x>
      <y>182</y>
     </hint>
-    <hint type="destinationlabel">
-     <x>160</x>
-     <y>107</y>
-    </hint>
    </hints>
   </connection>
   <connection>
-   <sender>removabledevicecombobox</sender>
-   <signal>currentDeviceEjectable(bool)</signal>
-   <receiver>device_eject_usb_button</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>252</x>
-     <y>107</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>518</x>
-     <y>107</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_del_history_row</sender>
+   <sender>y_view_button</sender>
    <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>removeSelectedItem()</slot>
+   <receiver>vtk</receiver>
+   <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>79</x>
-     <y>95</y>
+     <x>877</x>
+     <y>186</y>
     </hint>
     <hint type="destinationlabel">
-     <x>97</x>
-     <y>75</y>
+     <x>1135</x>
+     <y>271</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>btn_clear_queue</sender>
+   <sender>copy_to_usb_2</sender>
    <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>clearQueue()</slot>
+   <receiver>filesystemtable</receiver>
+   <slot>doFileTransfer()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>79</x>
-     <y>95</y>
+     <x>694</x>
+     <y>611</y>
     </hint>
     <hint type="destinationlabel">
-     <x>221</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btnMdiRowUp</sender>
-   <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>moveRowItemUp()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>79</x>
-     <y>95</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>374</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btnMdiRowDown</sender>
-   <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>moveRowItemDown()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>79</x>
-     <y>95</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>369</x>
-     <y>75</y>
+     <x>776</x>
+     <y>182</y>
     </hint>
    </hints>
   </connection>
@@ -34691,162 +35179,34 @@ font: 11pt bebas kai;
    </hints>
   </connection>
   <connection>
-   <sender>btn_run_line</sender>
-   <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>runSelection()</slot>
+   <sender>filesystemtable_2</sender>
+   <signal>atDeviceRoot(bool)</signal>
+   <receiver>device_folder_up_button</receiver>
+   <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>79</x>
-     <y>95</y>
+     <x>195</x>
+     <y>182</y>
     </hint>
     <hint type="destinationlabel">
-     <x>200</x>
-     <y>75</y>
+     <x>160</x>
+     <y>107</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>btnCopyToEditor</sender>
+   <sender>main_new_folder_button</sender>
    <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>copySelectionToGcodeEditor()</slot>
+   <receiver>filesystemtable</receiver>
+   <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>79</x>
-     <y>95</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>303</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btnMdiRowUp_2</sender>
-   <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>79</x>
-     <y>95</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>126</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btnMdiRowUp_3</sender>
-   <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>runSelection()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>79</x>
-     <y>95</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>242</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>edit_gcode_button</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>gcodetextedit</receiver>
-   <slot>EditorReadWrite(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1268</x>
+     <x>1027</x>
      <y>611</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1195</x>
-     <y>135</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>save_button</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit</receiver>
-   <slot>saveFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1490</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1195</x>
-     <y>135</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>save_as_button</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit</receiver>
-   <slot>saveFileAs()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1601</x>
-     <y>611</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1195</x>
-     <y>135</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>mdiEntry</sender>
-   <signal>returnPressed()</signal>
-   <receiver>enter</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>553</x>
-     <y>619</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>119</x>
-     <y>103</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>enter</sender>
-   <signal>clicked()</signal>
-   <receiver>mdihistory</receiver>
-   <slot>submit()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>103</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>379</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>find_replace_button</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit</receiver>
-   <slot>findDialog()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1312</x>
-     <y>603</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1320</x>
-     <y>541</y>
+     <x>776</x>
+     <y>182</y>
     </hint>
    </hints>
   </connection>
@@ -34869,15 +35229,15 @@ font: 11pt bebas kai;
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="mainorthoperspbtnGroup"/>
   <buttongroup name="btngrpMdi"/>
-  <buttongroup name="proberoutinebtnGroup"/>
-  <buttongroup name="probepagewcsbtnGroup"/>
-  <buttongroup name="probemodeGroup"/>
-  <buttongroup name="customwcsbtnGroup"/>
-  <buttongroup name="probetabGroup"/>
+  <buttongroup name="mainorthoperspbtnGroup"/>
   <buttongroup name="probehelpGroup"/>
+  <buttongroup name="proberoutinebtnGroup"/>
+  <buttongroup name="probetabGroup"/>
+  <buttongroup name="customwcsbtnGroup"/>
+  <buttongroup name="probepagewcsbtnGroup"/>
   <buttongroup name="gcodemdibtnGroup"/>
   <buttongroup name="xycalbtnGroup"/>
+  <buttongroup name="probemodeGroup"/>
  </buttongroups>
 </ui>
